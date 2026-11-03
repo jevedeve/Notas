@@ -1,26 +1,210 @@
+
 @import "tailwindcss";
 
+/* =========================================
+   CONFIGURACIÓN DEL TEMA
+========================================= */
+
+@custom-variant oscuro (&:where(.oscuro, .oscuro *));
+
+/* =========================================
+   PALETA GLOBAL - MODO CLARO
+========================================= */
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Colores principales - Beige arena */
+  --color-principal: #C8B47F;
+  --color-principal-hover: #B7A16A;
+  --color-principal-activo: #9A8552;
+  --color-principal-suave: #F3EEDC;
+  --color-principal-texto: #51452D;
+
+  /* Colores secundarios - Grafito */
+  --color-secundario: #34363A;
+  --color-secundario-hover: #25272B;
+  --color-secundario-suave: #E9E8E4;
+
+  /* Fondos */
+  --color-fondo: #F5F5F3;
+  --color-fondo-secundario: #ECEBE7;
+  --color-fondo-terciario: #E2E0DA;
+  --color-fondo-invertido: #292A2C;
+
+  /* Superficies */
+  --color-superficie: #FBFAF7;
+  --color-superficie-hover: #F0EEE8;
+  --color-superficie-activa: #E7E3D9;
+  --color-superficie-elevada: #FFFFFF;
+
+  /* Textos */
+  --color-texto: #252522;
+  --color-texto-secundario: #4C4B46;
+  --color-texto-terciario: #65645E;
+  --color-texto-desactivado: #85847E;
+  --color-texto-invertido: #FFFFFF;
+
+  /* Bordes */
+  --color-borde: #DAD9D3;
+  --color-borde-secundario: #C5C3BB;
+  --color-borde-fuerte: #89877E;
+  --color-borde-enfocado: #806B3D;
+
+  /* Estados */
+  --color-exito: #267044;
+  --color-exito-suave: #E1F0E5;
+
+  --color-advertencia: #88600C;
+  --color-advertencia-suave: #F8EECF;
+
+  --color-error: #B52E2E;
+  --color-error-suave: #F9E4E1;
+
+  --color-informacion: #276681;
+  --color-informacion-suave: #E1EDF2;
+
+  /* Escala de grises cálidos */
+  --gris-50: #FBFAF7;
+  --gris-100: #F5F5F3;
+  --gris-200: #ECEBE7;
+  --gris-300: #DAD9D3;
+  --gris-400: #B7B6AF;
+  --gris-500: #85847E;
+  --gris-600: #65645E;
+  --gris-700: #4C4B46;
+  --gris-800: #34363A;
+  --gris-900: #25272B;
+  --gris-950: #1C1D20;
 }
+
+
+/* =========================================
+   MODO OSCURO
+========================================= */
+
+.oscuro {
+  color-scheme: dark;
+
+  /* Colores principales */
+  --color-principal: #D8C79A;
+  --color-principal-hover: #E5D6B0;
+  --color-principal-activo: #C6B27F;
+  --color-principal-suave: #403B2D;
+  --color-principal-texto: #F1E7CB;
+
+  /* Colores secundarios */
+  --color-secundario: #C5C4BD;
+  --color-secundario-hover: #DEDDD5;
+  --color-secundario-suave: #3B3C39;
+
+  /* Fondos */
+  --color-fondo: #202120;
+  --color-fondo-secundario: #292A28;
+  --color-fondo-terciario: #343530;
+  --color-fondo-invertido: #F5F5F3;
+
+  /* Superficies */
+  --color-superficie: #292A28;
+  --color-superficie-hover: #343530;
+  --color-superficie-activa: #41413B;
+  --color-superficie-elevada: #30312E;
+
+  /* Textos */
+  --color-texto: #F5F4EF;
+  --color-texto-secundario: #D0CFC7;
+  --color-texto-terciario: #AAA9A1;
+  --color-texto-desactivado: #85847E;
+  --color-texto-invertido: #252522;
+
+  /* Bordes */
+  --color-borde: #454640;
+  --color-borde-secundario: #5A5B53;
+  --color-borde-fuerte: #85847A;
+  --color-borde-enfocado: #D8C79A;
+
+  /* Estados */
+  --color-exito: #79C994;
+  --color-exito-suave: #233F2D;
+
+  --color-advertencia: #E6C36C;
+  --color-advertencia-suave: #494024;
+
+  --color-error: #F08B82;
+  --color-error-suave: #4C2927;
+
+  --color-informacion: #82BED6;
+  --color-informacion-suave: #243D49;
+
+  /* Escala de grises cálidos */
+  --gris-50: #202120;
+  --gris-100: #292A28;
+  --gris-200: #343530;
+  --gris-300: #454640;
+  --gris-400: #65655D;
+  --gris-500: #85847E;
+  --gris-600: #AAA9A1;
+  --gris-700: #C5C4BD;
+  --gris-800: #DAD9D3;
+  --gris-900: #ECEBE7;
+  --gris-950: #F5F5F3;
+}
+
+/* =========================================
+   INTEGRACIÓN CON TAILWIND CSS 4
+========================================= */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-principal: var(--color-principal);
+  --color-principal-hover: var(--color-principal-hover);
+  --color-principal-activo: var(--color-principal-activo);
+  --color-principal-suave: var(--color-principal-suave);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --color-secundario: var(--color-secundario);
+  --color-secundario-hover: var(--color-secundario-hover);
+  --color-secundario-suave: var(--color-secundario-suave);
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-fondo: var(--color-fondo);
+  --color-fondo-secundario: var(--color-fondo-secundario);
+  --color-fondo-terciario: var(--color-fondo-terciario);
+
+  --color-superficie: var(--color-superficie);
+  --color-superficie-hover: var(--color-superficie-hover);
+  --color-superficie-elevada: var(--color-superficie-elevada);
+
+  --color-texto: var(--color-texto);
+  --color-texto-secundario: var(--color-texto-secundario);
+  --color-texto-terciario: var(--color-texto-terciario);
+  --color-texto-desactivado: var(--color-texto-desactivado);
+  --color-texto-invertido: var(--color-texto-invertido);
+
+  --color-borde: var(--color-borde);
+  --color-borde-secundario: var(--color-borde-secundario);
+  --color-borde-fuerte: var(--color-borde-fuerte);
+  --color-borde-enfocado: var(--color-borde-enfocado);
+
+  --color-exito: var(--color-exito);
+  --color-exito-suave: var(--color-exito-suave);
+
+  --color-advertencia: var(--color-advertencia);
+  --color-advertencia-suave: var(--color-advertencia-suave);
+
+  --color-error: var(--color-error);
+  --color-error-suave: var(--color-error-suave);
+
+  --color-informacion: var(--color-informacion);
+  --color-informacion-suave: var(--color-informacion-suave);
+
+  --color-gris-50: var(--gris-50);
+  --color-gris-100: var(--gris-100);
+  --color-gris-200: var(--gris-200);
+  --color-gris-300: var(--gris-300);
+  --color-gris-400: var(--gris-400);
+  --color-gris-500: var(--gris-500);
+  --color-gris-600: var(--gris-600);
+  --color-gris-700: var(--gris-700);
+  --color-gris-800: var(--gris-800);
+  --color-gris-900: var(--gris-900);
+  --color-gris-950: var(--gris-950);
 }
