@@ -73,13 +73,13 @@ export function FormularioNota() {
       </div>
 
       <div className="flex justify-end">
-        <Boton
-          type="submit"
-          icono={Plus}
-          cargando={enviando}
-        >
-          Crear nota
-        </Boton>
+   <Boton
+  type="submit"
+  icono={Plus}
+  cargando={enviando}
+>
+  Crear nota
+</Boton>
       </div>
     </form>
   );

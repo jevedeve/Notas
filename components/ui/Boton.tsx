@@ -21,13 +21,14 @@ export function Boton({
   const estilosBase =
     "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold tracking-tight transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primario disabled:pointer-events-none disabled:opacity-50";
 
-  const estilosVariantes = {
-    primario:
-      "bg-primario text-texto-invertido hover:bg-primario/90",
-    peligro:
-      "bg-error text-texto-invertido hover:bg-error/90",
-    fantasma:
-      "bg-transparent text-texto hover:bg-superficie-secundaria",
+ const estilosVariantes = {
+  primario:
+    "bg-principal text-texto-invertido hover:bg-principal-hover",
+  peligro:
+    "bg-error text-texto-invertido hover:bg-error/90",
+  fantasma:
+    "bg-transparent text-texto hover:bg-superficie-secundaria",
+
   };
 
   return (

@@ -29,8 +29,8 @@ export function BotonFavorita({
       <Star
         className={`h-5 w-5 ${
           favorita
-            ? "fill-acento text-acento"
-            : "text-texto-terciario"
+  ? "fill-principal text-principal"
+  : "text-texto-terciario"
         }`}
         aria-hidden="true"
       />
