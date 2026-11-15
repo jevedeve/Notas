@@ -17,6 +17,6 @@ model Nota {
   id          String   @id @default(cuid())
   titulo      String
   contenido   String?
-  favorito    Boolean @default(false)
-  creado      DateTime @default(now())
+  favorita    Boolean @default(false)
+  creadoEn      DateTime @default(now())
 }
